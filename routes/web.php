@@ -57,10 +57,6 @@ Route::get('/test-like', function () {
     return $post->likes;
 });
 
-Route::get('/test-view', function () {
-    return view('test');
-});
-
 Route::get('/about', function () {
     return view('about');
 });
