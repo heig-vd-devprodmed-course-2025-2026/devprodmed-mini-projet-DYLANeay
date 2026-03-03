@@ -2,6 +2,17 @@
 
 /* Contient toutes les clés de traduction personalisée (pas généré par la librairie lang) */
 
+/**
+ * French UI language file
+ * 
+ * This file contains all French localization strings for the user interface.
+ * 
+ * @package DevProdMed
+ * @subpackage Language
+ * @category French (fr)
+ * 
+ * @since 1.0.0
+ */
 declare(strict_types=1);
 
 return [
