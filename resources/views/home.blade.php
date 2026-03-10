@@ -1,4 +1,9 @@
 <x-default-layout>
+
+
+    {{-- Kind of a console.log in JS but in PHP : --}}
+    {{--     @php dump($posts); @endphp --}}
+
     <x-slot:title>
         {{ __('ui.home.title') }}
     </x-slot>
