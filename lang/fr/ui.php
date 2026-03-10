@@ -24,6 +24,15 @@ return [
         'disclaimer' => "Ce réseau social est un projet réalisé dans le cadre d'un cours de la HEIG-VD, Suisse.",
         'copyright' => '© :year Tous droits réservés.',
     ],
+    'errors' => [
+        '404' => [
+            'title' => 'Page introuvable',
+            'description' => "La page que vous recherchez n'existe pas.",
+            'heading' => 'Page introuvable',
+            'message' => "Désolé, la page que vous recherchez n'existe pas ou a été déplacée.",
+            'back_home' => "Retour à l'accueil",
+        ],
+    ],
     'posts' => [
         'no_posts' => 'Aucun post à afficher.',
         'likes_count' => '{0} Aucun like|{1} :count like|[2,*] :count likes',
