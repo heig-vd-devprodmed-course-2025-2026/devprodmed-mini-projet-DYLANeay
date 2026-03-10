@@ -1,10 +1,12 @@
 <x-default-layout>
-    <x-slot:title>
-        {{ __('ui.home.title') }}
-    </x-slot>
+
 
     {{-- Kind of a console.log in JS but in PHP : --}}
     {{--     @php dump($posts); @endphp --}}
+
+    <x-slot:title>
+        {{ __('ui.home.title') }}
+    </x-slot>
 
     <x-slot:description>
         {{ __('ui.home.description') }}
@@ -18,10 +20,18 @@
         {{ __('ui.home.introduction', ['app_name' => config('app.name')]) }}
     </p>
 
+    <h2 class="text-xl font-bold text-gray-900 dark:text-white mt-8">
+        {{ __('ui.home.recent_posts') }}
+    </h2>
+
     <div class="mt-8 space-y-6">
         @foreach ($posts as $post)
-            {{-- Cela fonctionne car $post nous a été donné par la route, puis on la passe au composant! --}}
             <x-post-card :post="$post" />
         @endforeach
     </div>
+
+    <a href="{{ url('/posts') }}"
+        class="mt-6 block w-full px-4 py-2 bg-teal-600 dark:bg-purple-900 text-white rounded-md hover:bg-teal-700 dark:hover:bg-purple-800 text-center">
+        {{ __('ui.home.see_all_posts') }}
+    </a>
 </x-default-layout>
