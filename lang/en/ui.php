@@ -23,6 +23,15 @@ return [
         'disclaimer' => 'This social network is a project made as part of a course at HEIG-VD, Switzerland.',
         'copyright' => '© :year All rights reserved.',
     ],
+    'errors' => [
+        '404' => [
+            'title' => 'Page not found',
+            'description' => 'The page you are looking for does not exist.',
+            'heading' => 'Page not found',
+            'message' => 'Sorry, the page you are looking for does not exist or has been moved.',
+            'back_home' => 'Back to home',
+        ],
+    ],
     'posts' => [
         'no_posts' => 'No posts to display.',
         'likes_count' => '{0} No likes|{1} :count like|[2,*] :count likes',
