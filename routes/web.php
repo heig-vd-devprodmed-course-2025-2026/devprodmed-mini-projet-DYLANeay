@@ -3,6 +3,7 @@
 use App\Models\Post;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,8 +16,4 @@ Route::get('/@{username}', [ProfileController::class, 'show'])->where('username'
 
 Route::resource('posts', PostController::class);
 
-Route::get('/', function () {
-    $posts = Post::orderBy('created_at', 'desc')->with('user')->with('likes')->limit(3)->get();
-
-    return view('home', ['posts' => $posts]);
-});
+Route::get('/', [HomeController::class, 'index']);
