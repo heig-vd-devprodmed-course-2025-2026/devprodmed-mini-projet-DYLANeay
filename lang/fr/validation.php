@@ -20,6 +20,11 @@ return [
     "attributes" => [
         "content" => "contenu",
         "title" => "titre",
+        "email" => "adresse e-mail",
+        "first_name" => "prénom",
+        "last_name" => "nom",
+        "profile_picture" => "photo de profil",
+        "username" => "nom d'utilisateur",
     ],
     "ascii" =>
         "Le champ :attribute ne doit contenir que des caractères alphanumériques et des symboles codés sur un octet.",

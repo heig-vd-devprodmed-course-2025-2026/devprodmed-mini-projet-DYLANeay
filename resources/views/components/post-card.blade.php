@@ -2,10 +2,16 @@
     <header class="mb-4">
         <div class="flex items-center gap-3 mb-3">
             <a href="{{ url('@' . $post->user->username) }}">
-                <div
-                    class="h-10 w-10 rounded-full bg-teal-600 dark:bg-purple-900 flex items-center justify-center text-white font-semibold hover:bg-teal-700 dark:hover:bg-purple-800">
-                    {{ strtoupper(substr($post->user->first_name, 0, 1) . substr($post->user->last_name, 0, 1)) }}
-                </div>
+                @if ($post->user->profile_picture)
+                    <img src="{{ asset('storage/' . $post->user->profile_picture) }}"
+                        alt="{{ $post->user->first_name }} {{ $post->user->last_name }}"
+                        class="h-10 w-10 rounded-full object-cover">
+                @else
+                    <div
+                        class="h-10 w-10 rounded-full bg-teal-600 dark:bg-purple-900 flex items-center justify-center text-white font-semibold hover:bg-teal-700 dark:hover:bg-purple-800">
+                        {{ strtoupper(substr($post->user->first_name, 0, 1) . substr($post->user->last_name, 0, 1)) }}
+                    </div>
+                @endif
             </a>
             <div>
                 <a href="{{ url('@' . $post->user->username) }}" class="hover:underline">
