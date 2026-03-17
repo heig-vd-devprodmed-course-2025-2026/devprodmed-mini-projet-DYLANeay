@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\MyProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get("/about", function () {
@@ -24,3 +25,5 @@ Route::match(["put", "patch"], "/likes/{post}", [
     LikeController::class,
     "update",
 ]);
+
+Route::singleton("my-profile", MyProfileController::class)->destroyable();
