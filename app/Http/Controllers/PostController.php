@@ -58,7 +58,16 @@ class PostController extends Controller
     {
         $post = Post::with("user")->with("likes")->findOrFail($id);
 
-        return view("posts.show", ["post" => $post]);
+        $user = User::find(2);
+        $reaction = $post->likes()->where("user_id", $user->id)->first();
+
+        // Vérifie si la personne a déjà liké ce post
+        if ($reaction) {
+            // Récupère la réaction au post car les reactions sont stockées dans la table pivot likes
+            $reaction = $reaction->pivot->reaction;
+        }
+
+        return view("posts.show", ["post" => $post, "reaction" => $reaction]);
     }
 
     /**
