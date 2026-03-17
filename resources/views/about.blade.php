@@ -1,11 +1,11 @@
 <x-default-layout>
     <x-slot:title>
         {{ __('ui.about.title') }}
-    </x-slot>
+    </x-slot:title>
 
     <x-slot:description>
         {{ __('ui.about.description') }}
-    </x-slot>
+    </x-slot:description>
 
     <h1 class="text-2xl font-bold">
         {{ __('ui.about.title') }}

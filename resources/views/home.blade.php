@@ -1,16 +1,15 @@
 <x-default-layout>
 
-
     {{-- Kind of a console.log in JS but in PHP : --}}
     {{--     @php dump($posts); @endphp --}}
 
     <x-slot:title>
         {{ __('ui.home.title') }}
-    </x-slot>
+    </x-slot:title>
 
     <x-slot:description>
         {{ __('ui.home.description') }}
-    </x-slot>
+    </x-slot:description>
 
     <h1 class="text-2xl font-bold dark:text-white">
         {{ config('app.name') }}
