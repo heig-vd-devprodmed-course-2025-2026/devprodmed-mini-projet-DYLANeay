@@ -165,6 +165,7 @@ return [
             "actions" => [
                 "edit" => "Modifier le profil",
                 "view_public" => "Voir le profil public",
+                "logout" => "Se déconnecter",
             ],
         ],
         "form" => [

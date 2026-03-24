@@ -49,10 +49,11 @@
                     {{ $post->created_at->diffForHumans() }}
                 </span>
                 ·
-                <a href="{{ url('/posts/' . $post->id . '/edit') }}">
-                    {{ __('ui.posts.edit.title_without_post_title') }}
-                </a>
-                ·
+                @can ('update', $post)
+                    <a href="{{ url('/posts/' . $post->id . '/edit') }}">
+                        {{ __('ui.posts.edit.title_without_post_title') }}
+                    </a>
+                ·@endcan
                 <span class="font-semibold">
                     {{ trans_choice('ui.posts.likes_count', count($post->likes)) }}
                 </span>
@@ -66,6 +67,7 @@
         </div>
 
         <footer class="pt-4 border-t border-gray-200 dark:border-gray-700">
+            @auth
             <form method="POST" action="{{ url('/likes/' . $post->id) }}" class="mb-4">
                 @csrf
                 @method('PUT')
@@ -96,6 +98,7 @@
                     </button>
                 </div>
             </form>
+            @endauth
             <ul class="flex flex-wrap gap-2">
                 @forelse ($post->likes as $user)
                     <li class="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
