@@ -10,12 +10,13 @@ class LikeController extends Controller
 {
     public function update(Request $request, string $id)
     {
+        Log::info($request->all());
         $validated = $request->validate([
             "reaction" => ["required", "in:like,love,haha,wow,sad,angry"],
         ]);
 
         $post = Post::findOrFail($id);
-        $user = User::where("id", 2)->first();
+        $user = $request->user();
         $reaction = $validated["reaction"];
 
         // Vérifie si la personne avait déjà liké ce post
