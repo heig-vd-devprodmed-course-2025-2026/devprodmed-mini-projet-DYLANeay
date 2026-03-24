@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class PostController extends Controller
 {
@@ -79,7 +80,7 @@ class PostController extends Controller
     public function edit(string $id)
     {
         $post = Post::findOrFail($id);
-
+        Gate::authorize("update", $post);
         return view("posts.edit", ["post" => $post]);
     }
 
@@ -98,6 +99,8 @@ class PostController extends Controller
 
         $post = Post::findOrFail($id);
 
+        Gate::authorize("update", $post);
+
         $post->title = $validated["title"];
         $post->content = $validated["content"];
 
@@ -111,7 +114,11 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        Post::destroy($id);
+        $post = Post::findOrFail($id);
+
+        Gate::authorize("delete", $post);
+
+        $post->delete();
 
         return redirect("/posts");
     }
