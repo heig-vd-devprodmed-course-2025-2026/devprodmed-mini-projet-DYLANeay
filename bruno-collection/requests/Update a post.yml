@@ -1,0 +1,27 @@
+info:
+  name: Update a post
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: http://localhost:8000/api/v1/posts/1
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Authorization
+      value: Bearer <token>
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Titre modifié",
+        "content": "Contenu modifié."
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

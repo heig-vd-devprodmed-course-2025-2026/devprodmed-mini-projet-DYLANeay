@@ -1,0 +1,27 @@
+info:
+  name: Create a post
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: http://localhost:8000/api/v1/posts
+  headers:
+    - name: Authorization
+      value: Bearer <token>
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Mon nouveau post",
+        "content": "Voici le contenu de mon nouveau post."
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
