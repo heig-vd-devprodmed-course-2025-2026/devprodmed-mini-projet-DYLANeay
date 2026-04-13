@@ -101,6 +101,7 @@ return [
                 "notice" =>
                     "Votre jeton a été créé. Copiez-le maintenant, il ne sera plus affiché.",
             ],
+            "new_token_created" => "Votre jeton a été créé. Copiez-le maintenant, il ne sera plus affiché.",
             "no_tokens" => "Aucun jeton d'accès.",
             "table" => [
                 "name" => "Nom",
