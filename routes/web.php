@@ -8,10 +8,15 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MyProfileController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TokenController;
 
 Route::get("/about", function () {
     return view("about");
 });
+
+Route::resource("tokens", TokenController::class)
+    ->only(["index", "create", "store", "destroy"])
+    ->middleware("auth");
 
 Route::controller(AuthController::class)->group(function () {
     Route::get("/auth/register", "showRegister");

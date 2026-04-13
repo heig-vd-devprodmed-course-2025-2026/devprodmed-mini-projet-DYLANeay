@@ -17,15 +17,6 @@ return [
         "Le champ :attribute doit contenir uniquement des chiffres et des lettres.",
     "any_of" => "Le champ :attribute est invalide.",
     "array" => "Le champ :attribute doit être un tableau.",
-    "attributes" => [
-        "content" => "contenu",
-        "title" => "titre",
-        "email" => "adresse e-mail",
-        "first_name" => "prénom",
-        "last_name" => "nom",
-        "profile_picture" => "photo de profil",
-        "username" => "nom d'utilisateur",
-    ],
     "ascii" =>
         "Le champ :attribute ne doit contenir que des caractères alphanumériques et des symboles codés sur un octet.",
     "before" => "Le champ :attribute doit être une date antérieure au :date.",
@@ -233,4 +224,16 @@ return [
     "uppercase" => "Le champ :attribute doit être en majuscules.",
     "url" => 'Le format de l\'URL de :attribute n\'est pas valide.',
     "uuid" => "Le champ :attribute doit être un UUID valide",
+    "attributes" => [
+        "content" => "contenu",
+        "email" => "adresse e-mail",
+        "expiration_date" => "date d'expiration",
+        "first_name" => "prénom",
+        "last_name" => "nom",
+        "name" => "nom",
+        "scopes" => "permissions",
+        "profile_picture" => "photo de profil",
+        "title" => "titre",
+        "username" => 'nom d\'utilisateur',
+    ],
 ];
