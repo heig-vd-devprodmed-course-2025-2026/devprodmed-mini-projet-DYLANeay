@@ -15,10 +15,12 @@ class User extends Authenticatable
 
     protected $hidden = ["password", "remember_token"];
 
-    protected $fillable = ['name', 'email', 'password', 'is_admin'];
+    // Allow only these attributes for mass assignment (e.g. create()/update() with arrays).
+    // This does not affect manual assignment ($user->name = ...), and helps prevent unwanted fields from being set.
+    protected $fillable = ["name", "email", "password", "is_admin"];
 
     protected $casts = [
-        'is_admin' => 'boolean',
+        "is_admin" => "boolean",
     ];
     /**
      * Get the posts for the user.
