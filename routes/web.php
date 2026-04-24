@@ -9,6 +9,7 @@ use App\Http\Controllers\MyProfileController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TokenController;
+use App\Http\Controllers\ReportController;
 
 Route::get("/about", function () {
     return view("about");
@@ -51,3 +52,6 @@ Route::match(["put", "patch"], "/likes/{post}", [
 Route::singleton("my-profile", MyProfileController::class)
     ->destroyable()
     ->middleware("auth");
+
+Route::post('/posts/{post}/report', [ReportController::class, 'store'])
+    ->middleware('auth');

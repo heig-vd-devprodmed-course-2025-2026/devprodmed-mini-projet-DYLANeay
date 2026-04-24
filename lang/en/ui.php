@@ -36,4 +36,13 @@ return [
         'no_posts' => 'No posts to display.',
         'likes_count' => '{0} No likes|{1} :count like|[2,*] :count likes',
     ],
+    'reports' => [
+        'reported' => 'Post reported successfully.',
+        'already_reported' => 'You have already reported this post.',
+        'report' => 'Report',
+        'reason' => [
+            'label' => 'Reason (optional)',
+            'placeholder' => 'Explain why you are reporting this post',
+        ],
+    ],
 ];

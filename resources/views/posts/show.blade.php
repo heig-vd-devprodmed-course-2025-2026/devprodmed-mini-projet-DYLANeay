@@ -30,6 +30,12 @@
     </x-slot>
 
     <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6">
+        @if (session('success'))
+            <div class="mb-4 p-3 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 rounded">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <header class="mb-6">
             @if ($post->title)
                 <h1 class="text-3xl font-bold dark:text-white mb-2">
@@ -98,6 +104,21 @@
                     </button>
                 </div>
             </form>
+            @endauth
+            @auth
+                @if (auth()->id() !== $post->user_id)
+                    <form method="POST" action="{{ url('/posts/' . $post->id . '/report') }}" class="mt-4">
+                        @csrf
+                        <input type="text"
+                            name="reason"
+                            placeholder="{{ __('ui.reports.reason.placeholder') }}"
+                            class="w-full border border-gray-300 dark:border-gray-600 rounded px-3 py-2 text-sm dark:bg-slate-700 dark:text-gray-300 mb-2">
+                        <button type="submit"
+                            class="text-sm text-red-500 hover:underline cursor-pointer">
+                            {{ __('ui.reports.report') }}
+                        </button>
+                    </form>
+                @endif
             @endauth
             <ul class="flex flex-wrap gap-2">
                 @forelse ($post->likes as $user)

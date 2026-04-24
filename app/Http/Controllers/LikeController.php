@@ -10,7 +10,6 @@ class LikeController extends Controller
 {
     public function update(Request $request, string $id)
     {
-        Log::info($request->all());
         $validated = $request->validate([
             "reaction" => ["required", "in:like,love,haha,wow,sad,angry"],
         ]);

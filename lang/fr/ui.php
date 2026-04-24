@@ -209,6 +209,15 @@ return [
             ],
         ],
     ],
+    "reports" => [
+        "reported" => "Post signalé avec succès.",
+        "already_reported" => "Vous avez déjà signalé ce post.",
+        "report" => "Signaler",
+        "reason" => [
+            "label" => "Motif (optionnel)",
+            "placeholder" => "Expliquez pourquoi vous signalez ce post",
+        ],
+    ],
     "my_profile" => [
         "edit" => [
             "title" => "Modifier son profil",
