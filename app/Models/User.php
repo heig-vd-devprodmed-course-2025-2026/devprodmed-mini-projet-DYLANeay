@@ -14,6 +14,12 @@ class User extends Authenticatable
     use HasApiTokens;
 
     protected $hidden = ["password", "remember_token"];
+
+    protected $fillable = ['name', 'email', 'password', 'is_admin'];
+
+    protected $casts = [
+        'is_admin' => 'boolean',
+    ];
     /**
      * Get the posts for the user.
      */
