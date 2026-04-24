@@ -25,8 +25,9 @@ class ReportController extends Controller
                 "user_id" => $request->user()->id,
                 "reason" => $request->reason,
             ]);
+            return back()->with("success", __("ui.reports.reported"));
         }
         //Dans tous les cas on redirige vers la dernière page visitée
-        return back()->with("success", __("ui.reports.reported"));
+        return back()->with("success", __("ui.reports.already_reported"));
     }
 }
