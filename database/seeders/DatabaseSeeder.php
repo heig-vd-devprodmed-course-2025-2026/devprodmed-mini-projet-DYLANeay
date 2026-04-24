@@ -38,6 +38,19 @@ class DatabaseSeeder extends Seeder
                 "updated_at" => new \DateTime("2026-02-09 11:00:00"),
             ]);
 
+            // Insert admin user
+            DB::table("users")->insert([
+                "id" => 3,
+                "first_name" => "Admin",
+                "last_name" => "Admin",
+                "username" => "admin",
+                "email" => "admin@example.com",
+                "password" => Hash::make("password"),
+                "is_admin" => true,
+                "created_at" => new \DateTime("2026-02-09 10:30:00"),
+                "updated_at" => new \DateTime("2026-02-09 10:30:00"),
+            ]);
+
             // Insert some posts for John Doe
             DB::table("posts")->insert([
                 [
