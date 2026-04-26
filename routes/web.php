@@ -10,6 +10,7 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TokenController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\Admin\ReportController as AdminReportController;
 
 Route::get("/about", function () {
     return view("about");
@@ -55,3 +56,7 @@ Route::singleton("my-profile", MyProfileController::class)
 
 Route::post('/posts/{post}/report', [ReportController::class, 'store'])
     ->middleware('auth');
+
+Route::get('/admin/reports', [AdminReportController::class, 'index'])
+    ->middleware(['auth', 'admin'])
+    ->name('admin.reports.index');
