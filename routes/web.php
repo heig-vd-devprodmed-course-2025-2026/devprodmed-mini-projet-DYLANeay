@@ -60,3 +60,11 @@ Route::post('/posts/{post}/report', [ReportController::class, 'store'])
 Route::get('/admin/reports', [AdminReportController::class, 'index'])
     ->middleware(['auth', 'admin'])
     ->name('admin.reports.index');
+
+Route::patch('/admin/reports/post/{post}/dismiss', [AdminReportController::class, 'dismiss'])
+    ->middleware(['auth', 'admin'])
+    ->name('admin.reports.dismiss');
+
+Route::delete('/admin/posts/{post}', [AdminReportController::class, 'destroy'])
+    ->middleware(['auth', 'admin'])
+    ->name('admin.posts.destroy');
