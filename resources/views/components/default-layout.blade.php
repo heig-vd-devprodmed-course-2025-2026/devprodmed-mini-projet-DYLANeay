@@ -34,6 +34,12 @@ city-80 transition">
                     </a>
                 </div>
                 @auth
+                    @if(Auth::user()->is_admin)
+                        <a href="{{ route('admin.reports.index') }}"
+                            class="block bg-teal-700 dark:bg-purple-900 px-3 py-1 rounded-md hover:bg-teal-800 dark:hover:bg-purple-800 transition">
+                            {{ __('reports.admin.nav_link') }}
+                        </a>
+                    @endif
                     <a href="{{ url('/my-profile') }}" class="block hover:opacity-80 transition">
                         <div
                             class="h-8 w-8 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
