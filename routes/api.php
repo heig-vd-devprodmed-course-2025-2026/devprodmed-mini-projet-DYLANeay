@@ -3,10 +3,14 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\v1\ApiPostController;
+use App\Http\Controllers\Api\v1\ApiReportController;
 
 Route::get("/user", function (Request $request) {
     return $request->user();
 })->middleware("auth:sanctum");
+
+Route::post('/v1/posts/{post}/report', [ApiReportController::class, 'store'])
+    ->middleware('auth:sanctum');
 
 Route::apiResource("v1/posts", ApiPostController::class)
     ->middlewareFor(["index", "show"], ["auth:sanctum", "abilities:posts:read"])
