@@ -10,5 +10,10 @@ return [
         "pending_count" => "{1} :count report|[2,*] :count reports",
         "by" => "by",
         "view_post" => "View post",
+        "dismiss" => "Dismiss",
+        "delete" => "Delete post",
+        "delete_confirm" => "Are you sure you want to delete this post? This action is irreversible.",
+        "dismissed_success" => "Reports have been dismissed.",
+        "deleted_success" => "The post has been deleted.",
     ],
 ];
