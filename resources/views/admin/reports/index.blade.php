@@ -23,7 +23,8 @@
                         {{ __('reports.admin.view_post') }}
                     </a>
                     <span class="ml-2 text-sm text-gray-500 dark:text-gray-400">
-                        {{ __('reports.admin.by') }} {{ $post->user->name }}
+                        {{ __('reports.admin.by') }} {{ $post->user->username }} ·
+                        {{ $post->created_at->diffForHumans() }}
                     </span>
                 </div>
                 <span
