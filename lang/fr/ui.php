@@ -101,7 +101,8 @@ return [
                 "notice" =>
                     "Votre jeton a été créé. Copiez-le maintenant, il ne sera plus affiché.",
             ],
-            "new_token_created" => "Votre jeton a été créé. Copiez-le maintenant, il ne sera plus affiché.",
+            "new_token_created" =>
+                "Votre jeton a été créé. Copiez-le maintenant, il ne sera plus affiché.",
             "no_tokens" => "Aucun jeton d'accès.",
             "table" => [
                 "name" => "Nom",
@@ -133,6 +134,7 @@ return [
                         "posts_read" => "Lire les posts",
                         "posts_update" => "Modifier des posts",
                         "posts_delete" => "Supprimer des posts",
+                        "report_create" => "Signaler des posts",
                     ],
                 ],
                 "content" => [

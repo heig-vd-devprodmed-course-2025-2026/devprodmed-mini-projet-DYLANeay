@@ -66,6 +66,13 @@
                             {{ __('ui.tokens.form.fields.scopes.options.posts_delete') }}
                         </label>
                     </div>
+                    <div class="flex items-center mb-2">
+                        <input type="checkbox" id="scope-report:create" name="scopes[]" value="report:create"
+                            {{ in_array('report:create', old('scopes', [])) ? 'checked' : '' }} class="mr-2">
+                        <label for="scope-report:create" class="text-sm text-gray-700 dark:text-gray-300">
+                            {{ __('ui.tokens.form.fields.scopes.options.report_create') }}
+                        </label>
+                    </div>
                     @error('scopes')
                         <p class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
                     @enderror
