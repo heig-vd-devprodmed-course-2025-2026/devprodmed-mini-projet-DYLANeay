@@ -36,7 +36,7 @@ class TokenController extends Controller
             "name" => "required|string|max:255",
             "scopes" => "required|array|min:1",
             "scopes.*" =>
-                "string|in:posts:read,posts:create,posts:update,posts:delete",
+                "string|in:posts:read,posts:create,posts:update,posts:delete,report:create",
             "expiration_date" => "nullable|date|after:today",
         ]);
 
