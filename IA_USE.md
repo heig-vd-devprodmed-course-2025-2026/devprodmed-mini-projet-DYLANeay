@@ -51,7 +51,7 @@ Toutes les **classes Tailwind CSS** ont été générées par l'IA. Ce choix a �
 
 ### 5. Traductions (i18n)
 
-Les **fichiers de traduction** ont également été générés par l'IA dans un souci d'efficacité. La gestion des traductions n'était pas au cœur de l'objectif pédagogique de ce projet.
+Les **fichiers de traduction** ont également été générés par l'IA dans un souci d'efficacité. La gestion des traductions ne variant pas au fur et à mesure du projet, les simples ajouts dans les bons fichiers ne me semblaient pas nécessaire à être fait à la main.
 
 &nbsp;
 
@@ -67,4 +67,4 @@ L'IA a généré un **premier design et contenu de présentation** via Marp. Tou
 
 ## Conclusion
 
-Je suis **en mesure d'expliquer chaque point de mon code sans soucis**. L'IA a été utilisée comme un **tuteur / mentor** pour guider, orienter et accélérer les tâches annexes — **jamais comme exécutant**.
+Je suis **en mesure d'expliquer chaque point de mon code sans soucis**. L'IA a été utilisée comme un **tuteur / mentor** pour guider, orienter et accélérer les tâches annexes, **jamais comme exécutant**.
