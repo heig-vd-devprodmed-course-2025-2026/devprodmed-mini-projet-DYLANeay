@@ -336,7 +336,7 @@ public function handle($request, Closure $next)
 </div>
 <div>
 
-**Dashboard optimisé**
+**Dashboard**
 
 ```php
 // Admin\ReportController@index
@@ -390,7 +390,7 @@ return response()->json(['message' => __('ui.reports.reported')], 201); // 201 =
 
 ---
 
-# Développement — Issues & Pull Requests
+# Développement, Issues & Pull Requests
 
 **Découpage en 6 issues GitHub, chacunes liées à un PR qui se merge sur `main`. Architecture proposée par moment par Claude Opus 4.6/4.7 via Claude Code**
 
