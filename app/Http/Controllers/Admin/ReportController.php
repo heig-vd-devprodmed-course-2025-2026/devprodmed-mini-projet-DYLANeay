@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
-use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
@@ -16,7 +15,7 @@ class ReportController extends Controller
             ->withCount(["reports as pending_reports_count" => $pending]) // compte les reports pending par post
             ->with("user")
             ->with([
-                //q = param qui représente donc reports
+                // q = param qui représente donc reports
                 "reports" => fn($q) => $q
                     ->where("status", "pending")
                     ->with("user")
@@ -31,10 +30,18 @@ class ReportController extends Controller
     public function dismiss(Post $post)
     {
         // Passe tous les reports pending de ce post à dismissed
-        $post->reports()->where('status', 'pending')->update(['status' => 'dismissed']);
+        $count = $post->reports()->where("status", "pending")->count();
+        $post
+            ->reports()
+            ->where("status", "pending")
+            ->update(["status" => "dismissed"]);
 
-        return redirect()->route('admin.reports.index')
-            ->with('success', __('reports.admin.dismissed_success'));
+        return redirect()
+            ->route("admin.reports.index")
+            ->with(
+                "success",
+                trans_choice("reports.admin.dismissed_success", $count),
+            );
     }
 
     public function destroy(Post $post)
@@ -42,7 +49,8 @@ class ReportController extends Controller
         // Supprime le post — les reports sont supprimés en cascade (cascadeOnDelete en migration)
         $post->delete();
 
-        return redirect()->route('admin.reports.index')
-            ->with('success', __('reports.admin.deleted_success'));
+        return redirect()
+            ->route("admin.reports.index")
+            ->with("success", __("reports.admin.deleted_success"));
     }
 }

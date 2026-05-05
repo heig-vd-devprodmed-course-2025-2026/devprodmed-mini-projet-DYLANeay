@@ -12,8 +12,10 @@ return [
         "view_post" => "View post",
         "dismiss" => "Dismiss",
         "delete" => "Delete post",
-        "delete_confirm" => "Are you sure you want to delete this post? This action is irreversible.",
-        "dismissed_success" => "Reports have been dismissed.",
+        "delete_confirm" =>
+            "Are you sure you want to delete this post? This action is irreversible.",
+        "dismissed_success" =>
+            "{1} The report has been dismissed.|[2,*] Reports have been dismissed.",
         "deleted_success" => "The post has been deleted.",
     ],
 ];
