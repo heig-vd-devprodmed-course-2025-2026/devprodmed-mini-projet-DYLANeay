@@ -12,8 +12,10 @@ return [
         "view_post" => "Voir le post",
         "dismiss" => "Ignorer",
         "delete" => "Supprimer le post",
-        "delete_confirm" => "Souhaitez-vous vraiment supprimer ce post ? Cette action est irréversible.",
-        "dismissed_success" => "Les signalements ont été ignorés.",
+        "delete_confirm" =>
+            "Souhaitez-vous vraiment supprimer ce post ? Cette action est irréversible.",
+        "dismissed_success" =>
+            "{1} Le signalement a été ignoré.|[2,*] Les signalements ont été ignorés.",
         "deleted_success" => "Le post a été supprimé.",
     ],
 ];
