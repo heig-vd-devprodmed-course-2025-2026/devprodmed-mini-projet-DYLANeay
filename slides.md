@@ -367,8 +367,10 @@ $post->reports()
 
 ```php
 // routes/api.php
-Route::post('/v1/posts/{post}/report', [ApiReportController::class, 'store'])
-    ->middleware('auth:sanctum');
+Route::post("/v1/posts/{post}/report", [
+    ApiReportController::class,
+    "store",
+])->middleware(["auth:sanctum", "abilities:report:create"]);
 ```
 
 **Logique métier**
